@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Layout, Row } from 'antd';
-import TopBar from './components/TopBar';
 import Registry from './components/Registry';
 import NewRegistry from './components/NewRegistry';
 import './App.css';
@@ -12,7 +11,6 @@ class App extends Component {
     return (
       <Layout className="layout">
         <Header className="fixed full tar">
-          <TopBar/>
         </Header>
         <Content style={{ marginTop: 64 }}>
           <Row type="flex" justify="start">
