@@ -1,1 +1,18 @@
 @import '~antd/dist/antd.css';
+
+.full {
+  width: 100%;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.card {
+  flex: 1 0 250px;
+  margin: 1em;
+}
+
+.tar {
+  text-align: right;
+}

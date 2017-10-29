@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
-import { Layout } from 'antd';
+import { Layout, Row } from 'antd';
 import TopBar from './components/TopBar';
+import Registry from './components/Registry';
 import NewRegistry from './components/NewRegistry';
 import './App.css';
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content } = Layout;
 
 class App extends Component {
   render() {
     return (
       <Layout className="layout">
-        <Header>
+        <Header className="fixed full tar">
           <TopBar/>
         </Header>
-        <Content>
-          <NewRegistry/>
+        <Content style={{ marginTop: 64 }}>
+          <Row type="flex" justify="start">
+            <NewRegistry/>
+            <Registry/>
+            <Registry/>
+          </Row>
         </Content>
-        <Footer></Footer>
       </Layout>
     );
   }
