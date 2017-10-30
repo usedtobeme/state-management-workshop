@@ -25,12 +25,12 @@ export default class Registry extends Component {
     };
 
     return (
-      <Card className="card" title="Attendee Name" extra={<Icon type={cardDetails[this.state.status].type} style={{
+      <Card className="card" title={this.props.question.name} extra={<Icon type={cardDetails[this.state.status].type} style={{
         color: cardDetails[this.state.status].color,
         fontSize: 20,
         lineHeight: 2.4
       }} onClick={cardDetails[this.state.status].click}/>}>
-        <p>What is the question displayed here?</p>
+        <p>{this.props.question.text}</p>
       </Card>
     );
   }

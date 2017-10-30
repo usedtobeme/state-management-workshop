@@ -17,6 +17,10 @@ class NewRegistry extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.props.addNewQuestion({
+      name: this.state.name,
+      text: this.state.question
+    });
     this.setState({showForm: false, name: '', question: ''});
   }
 

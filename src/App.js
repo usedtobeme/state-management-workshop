@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, Row } from 'antd';
+import QuestionsContainer from './containers/questions'
 import TopBar from './components/TopBar';
-import Registry from './components/Registry';
-import NewRegistry from './components/NewRegistry';
 import './App.css';
 
 const { Header, Content } = Layout;
@@ -16,9 +15,7 @@ class App extends Component {
         </Header>
         <Content style={{ marginTop: 64 }}>
           <Row type="flex" justify="start">
-            <NewRegistry/>
-            <Registry/>
-            <Registry/>
+            <QuestionsContainer />
           </Row>
         </Content>
       </Layout>
