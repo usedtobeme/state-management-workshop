@@ -1,5 +1,9 @@
 import * as types from './actionTypes';
 
+export function getQuestions() {
+  
+}
+
 export function addNewQuestion(question) {
   return {
     type: types.ADD_NEW_QUESTION,

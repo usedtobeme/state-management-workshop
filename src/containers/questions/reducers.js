@@ -1,7 +1,7 @@
 import * as types from './actionTypes';
 
 const initialState = {
-  questions: [],
+  questions: {},
 };
 
 export default function questionsReducer(state = initialState, action) {
@@ -9,14 +9,15 @@ export default function questionsReducer(state = initialState, action) {
     case types.ADD_NEW_QUESTION:
       return {
         ...state,
-        questions: [...state.questions, action.question]
+        questions: action.questions
       }
     case types.UPDATE_ITEM:
       return {
         ...state,
-        questions: [...state.questions.map((item) => (
-          item.id === action.item.id ? action.item : item
-        ))]
+        questions: {
+          ...state.questions, 
+          [action.item.id]: action.item
+        }
       }
     default:
       return state;
