@@ -18,6 +18,8 @@ class NewRegistry extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addNewQuestion({
+      id: this.state.name.replace(' ', '') + this.state.question.replace(' ','') + Math.random(),
+      status: 'new',
       name: this.state.name,
       text: this.state.question
     });

@@ -1,25 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Badge, Icon } from 'antd';
+import { connect } from 'react-redux';
 
-
-class TopBar extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {count: 5};
-  }
-
-  counterUp = () => {
-    this.setState({count: this.state.count + 1});
-  }
-
-  render() {
-    return (
-      <Badge count={this.state.count}>
-        <Icon type="flag" style={{ fontSize: 36, color: '#eee'}}  onClick={this.counterUp}/>
-      </Badge>
-    );
-  }
+const TopBar = (props) => {
+  return (
+    <Badge count={props.count}>
+      <Icon type="flag" style={{ fontSize: 36, color: '#eee'}} />
+    </Badge>
+  );
 };
 
-export default TopBar;
+function mapStateToProps(state) {
+  const count = state.questions.questions.filter((item) => item.status === 'new').length
+  return {
+    count
+  }
+}
+
+export default connect(mapStateToProps)(TopBar);

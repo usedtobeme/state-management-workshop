@@ -11,6 +11,13 @@ export default function questionsReducer(state = initialState, action) {
         ...state,
         questions: [...state.questions, action.question]
       }
+    case types.UPDATE_ITEM:
+      return {
+        ...state,
+        questions: [...state.questions.map((item) => (
+          item.id === action.item.id ? action.item : item
+        ))]
+      }
     default:
       return state;
   }
