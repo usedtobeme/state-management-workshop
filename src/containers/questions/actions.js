@@ -1,7 +1,14 @@
 import * as types from './actionTypes';
 
-export function getQuestions() {
-  
+export function syncQuestions() {
+  return { type: types.SYNC_QUESTIONS}
+}
+
+export function getQuestions(questions) {
+  return {
+    type: types.GET_QUESTIONS,
+    questions
+  }
 }
 
 export function addNewQuestion(question) {

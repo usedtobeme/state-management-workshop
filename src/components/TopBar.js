@@ -11,9 +11,9 @@ const TopBar = (props) => {
 };
 
 function mapStateToProps(state) {
-  const count;
-  for (item in state.questions.questions) {
-    if (item.status === 'new') {
+  let count = 0;
+  for (let item in state.questions.questions) {
+    if (state.questions.questions[item].status === 'new') {
       count = count + 1;
     }
   }

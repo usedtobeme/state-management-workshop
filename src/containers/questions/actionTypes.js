@@ -1,2 +1,4 @@
+export const SYNC_QUESTIONS = 'SYNC_QUESTIONS';
+export const GET_QUESTIONS = 'GET_QUESTIONS';
 export const ADD_NEW_QUESTION = 'ADD_NEW_QUESTION';
 export const UPDATE_ITEM = 'UPDATE_ITEM';

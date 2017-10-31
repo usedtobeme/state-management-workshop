@@ -5,9 +5,17 @@ import NewRegistry from '../../components/NewRegistry';
 import Registry from '../../components/Registry';
 
 const QuestionsContainer = (props) => {
+  let questions = []
+  for (let item in props.questions) {
+    if (Object.props.questions.hasOwnProperty(item)){
+      questions.push(
+        <Registry key={item} question={props.questions[item]} handleClick={props.updateItem} />
+      );
+    }
+  }
   return [
     <NewRegistry key="new" addNewQuestion={props.addNewQuestion}/>,
-    ...props.questions.map((item, index) => <Registry key={index} question={item} handleClick={props.updateItem} />)
+    ...questions
   ];
 }
 
