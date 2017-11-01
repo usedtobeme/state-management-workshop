@@ -1,7 +1,9 @@
 import * as types from './actionTypes';
 
 export function syncQuestions() {
-  return { type: types.SYNC_QUESTIONS}
+  return {
+    type: types.SYNC_QUESTIONS
+  }
 }
 
 export function getQuestions(questions) {
@@ -14,7 +16,16 @@ export function getQuestions(questions) {
 export function addNewQuestion(question) {
   return {
     type: types.ADD_NEW_QUESTION,
-    question
+    question,
+    meta: {
+      offline: {
+        effect: {
+          path: 'questions',
+          type: 'push',
+          item: question
+        }
+      }
+    }
   }
 }
 
