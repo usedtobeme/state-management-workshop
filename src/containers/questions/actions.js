@@ -18,9 +18,9 @@ export function addNewQuestion(question) {
   }
 }
 
-export function updateItem(item) {
+export function updateItem(update) {
   return {
     type: types.UPDATE_ITEM,
-    item
+    update
   }
 }

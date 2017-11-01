@@ -7,9 +7,9 @@ import Registry from '../../components/Registry';
 const QuestionsContainer = (props) => {
   let questions = []
   for (let item in props.questions) {
-    if (Object.props.questions.hasOwnProperty(item)){
+    if (props.questions.hasOwnProperty(item)){
       questions.push(
-        <Registry key={item} question={props.questions[item]} handleClick={props.updateItem} />
+        <Registry key={item} questionId={item} question={props.questions[item]} handleClick={props.updateItem} />
       );
     }
   }
@@ -21,7 +21,7 @@ const QuestionsContainer = (props) => {
 
 function mapStateToProps (state) {
   return {
-    questions: state.questions.questions
+    questions: state.questions
   }
 }
 

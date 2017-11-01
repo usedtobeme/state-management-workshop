@@ -4,8 +4,12 @@ import { Card, Icon } from 'antd';
 export default class Registry extends Component {
   handleClick = () => {
     this.props.handleClick({
-      ...this.props.question,
-      status: 'seen'
+      id: this.props.questionId,
+      item: {
+        name: this.props.question.name,
+        status: 'seen',
+        text: this.props.question.text
+      }
     })
   }
 
