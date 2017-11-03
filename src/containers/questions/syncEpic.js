@@ -8,8 +8,10 @@ const syncQuestionsEpic = action$ => {
   return action$.ofType(types.SYNC_QUESTIONS)
     .mergeMap(action => 
       Observable.fromEvent(firebase.database.ref(), 'value')
-        .map(snapshot => getQuestions(snapshot.val().questions))
-    );
+        .map(
+          snapshot => getQuestions(snapshot.val().questions)
+        )
+      )
 }
 
 
